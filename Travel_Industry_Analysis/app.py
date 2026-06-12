@@ -11,7 +11,14 @@ st.set_page_config(
 )
 
 # Load Data
-df = pd.read_csv("clean_tourism.csv")
+import os
+
+csv_path = os.path.join(
+    os.path.dirname(__file__),
+    "clean_tourism.csv"
+)
+
+df = pd.read_csv(r"C:\Users\nidhi\OneDrive\Desktop\Travel_Industry_Analysis\clean_tourism.csv")
 
 # Clean Guests Column
 df["Guests"] = df["Guests"].astype(str).str.replace(",", "")
